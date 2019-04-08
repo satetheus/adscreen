@@ -1,12 +1,31 @@
-.main_ad {
-  height: 100%;
-  padding-top: 100%;
+@-ms-viewport {
+  height: device-height;
+}
+
+body {
+  background-color: black
+}
+
+.large_ads {
+  height: 100vh;
+  width: 64vw;
+  float: left
 }
 
 .subad_1 {
-
+  height: 50vh;
+  width: 33vw;
+  float: right;
 }
 
 .subad_2 {
+  height: 50vh;
+  width: 33vw;
+  float: right;
+}
 
+.image {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }

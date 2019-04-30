@@ -5,8 +5,6 @@ $target_dir = "../displaySite/img/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 0;
 
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -32,8 +30,8 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+if(!in_array($imageFileType, array("jpg", "png","jpeg", "gif"))) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
 }

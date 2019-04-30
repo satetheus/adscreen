@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+
+echo '<!DOCTYPE html>
 <html>
 <body>
 
@@ -9,4 +11,6 @@
 </form>
 
 </body>
-</html>
+</html>';
+
+?>

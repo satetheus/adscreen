@@ -1,6 +1,6 @@
 <?php
 
-$target_dir = "imgTest/";
+$target_dir = "../displaySite/img/";
 
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 0;

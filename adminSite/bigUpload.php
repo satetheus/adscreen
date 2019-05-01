@@ -15,4 +15,7 @@ if (imageCheck($big_image, "bigImage", "submitBig") == True) {
     }
 }
 
+header('Location: index.php');
+exit;
+
 ?>

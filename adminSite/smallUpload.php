@@ -15,4 +15,7 @@ if (imageCheck($small_image, "smallImage", "submitSmall") == True) {
     }
 }
 
+header('Location: index.php');
+exit;
+
 ?>

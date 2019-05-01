@@ -7,11 +7,11 @@ $small_image = $small_dir . basename($_FILES["smallImage"]["name"]);
 // if everything is ok, try to upload small ad
 if (imageCheck($small_image, "smallImage", "submitSmall") == True) {
     if (move_uploaded_file($_FILES["smallImage"]["tmp_name"], $small_image)) {
-        echo "The file ". basename( $_FILES["smallImage"]["name"]). " has been uploaded.";
+        $_SESSION['sf_success'] = "The file ". basename( $_FILES["smallImage"]["name"]). " has been uploaded.";
     }
     
     else {
-        echo "Sorry, there was an error uploading your file.";
+        $_SESSION['sf_success'] = "Sorry, there was an error uploading your file.";
     }
 }
 

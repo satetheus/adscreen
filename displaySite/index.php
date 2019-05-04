@@ -1,18 +1,8 @@
 <?php
+include "import.php";
 
-$big_pic_dir = 'img/large_ad/';
-$big_images = array();
-
-$small_pic_dir = 'img/small_ad/';
-$small_images = array();
-
-foreach(array_filter(glob($big_pic_dir.'*.*'), 'is_file') as $file) {
-    array_push($big_images, $file);
-}
-
-foreach(array_filter(glob($small_pic_dir.'*.*'), 'is_file') as $file) {
-    array_push($small_images, $file);
-}
+$big_images = importImages('img/large_ad/');
+$small_images = importImages('img/small_ad/');
 
 echo "
 <!doctype html>

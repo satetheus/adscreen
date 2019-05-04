@@ -27,6 +27,10 @@ if(isset($_SESSION['sf_success'])) {
     echo $_SESSION['sf_success'];
 }
 
+echo '<form action="view.php" method="post" enctype="multipart/form-data">
+  <input type="submit" value="View all images on display">
+</form>';
+
 echo '
 </body>
 </html>';

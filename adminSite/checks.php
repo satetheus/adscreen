@@ -1,7 +1,7 @@
 <?php
-// starting code from https://www.w3schools.com/php/php_file_upload.asp
 
 function imageCheck($target_file, $file_name, $submit) {
+    // starting code from https://www.w3schools.com/php/php_file_upload.asp
     // Check if image file is a actual image or fake image
     if(isset($_POST[$submit])) {
         $check = getimagesize($_FILES[$file_name]["tmp_name"]);
@@ -32,6 +32,22 @@ function imageCheck($target_file, $file_name, $submit) {
 
     // If all checks pass, return True
     return True;
+}
+
+
+function uploadImage($directory, $input_id, $submit_id, $sess_var) {
+    $image = $directory . basename($_FILES[$input_id]["name"]);
+    
+    // if everything is ok, try to upload small ad
+    if (imageCheck($image, $input_id, $submit_id) == True) {
+        if (move_uploaded_file($_FILES[$input_id]["tmp_name"], $image)) {
+            $_SESSION[$sess_var] = "The file ". basename( $_FILES[$input_id]["name"]). " has been uploaded.";
+        }
+        
+        else {
+            $_SESSION[$sess_var] = "Sorry, there was an error uploading your file.";
+        }
+    }
 }
 
 ?>

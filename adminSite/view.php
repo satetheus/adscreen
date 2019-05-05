@@ -11,13 +11,15 @@ echo '<!DOCTYPE html>
 echo '<h1>Large Ads</h1>';
 
 foreach($big_images as $file) {
-    echo "<img class='image' class='big_picture' src='{$file}'>";
+    $big_link = "edit.php?size=large&index=".array_search($file, $big_images);
+    echo "<a href='{$big_link}'><img class='image' class='big_picture' src='{$file}'></a>";
 }
 
 echo '<h1>Small Ads</h1>';
 
 foreach($small_images as $file) {
-    echo "<img class='image' class='small_picture' src='{$file}'>";
+    $small_link = "edit.php?size=small&index=".array_search($file, $small_images);
+    echo "<a href='{$small_link}'><img class='image' class='small_picture' src='{$file}'></a>";
 }
 
 echo '

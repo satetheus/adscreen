@@ -30,7 +30,7 @@ if(isset($_POST["submitSmall"])) {
 }
 
 
-echo '<form action="view.php" method="post" enctype="multipart/form-data">
+echo '<form action="view.php" method="get" enctype="multipart/form-data">
   <input type="submit" value="View all images on display">
 </form>';
 

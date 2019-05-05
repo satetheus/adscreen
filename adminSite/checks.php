@@ -35,17 +35,17 @@ function imageCheck($target_file, $file_name, $submit) {
 }
 
 
-function uploadImage($directory, $input_id, $submit_id, $sess_var) {
+function uploadImage($directory, $input_id, $submit_id) {
     $image = $directory . basename($_FILES[$input_id]["name"]);
     
     // if everything is ok, try to upload small ad
     if (imageCheck($image, $input_id, $submit_id) == True) {
         if (move_uploaded_file($_FILES[$input_id]["tmp_name"], $image)) {
-            $_SESSION[$sess_var] = "The file ". basename( $_FILES[$input_id]["name"]). " has been uploaded.";
+            echo "The file ". basename( $_FILES[$input_id]["name"]). " has been uploaded.";
         }
         
         else {
-            $_SESSION[$sess_var] = "Sorry, there was an error uploading your file.";
+            echo "Sorry, there was an error uploading your file.";
         }
     }
 }

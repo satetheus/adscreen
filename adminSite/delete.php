@@ -1,22 +1,13 @@
 <?php
 include "../displaySite/import.php";
+include "funcs.php";
 
 
 echo '<!DOCTYPE html>
 <html>
 <body>';
 
-if(isset($_GET['size'])) {
-    $dir = '../displaySite/img/'.$_GET['size'].'_ad/';
-    $image = importImages($dir)[$_GET['index']];
-    $name = str_replace($dir, "", $image);
-}
-
-else {
-    // Redirect if parameters are not set
-    header("location: view.php");
-    exit;
-}
+list($dir, $image, $name) = set_image_vars();
 
 echo '
 <form action="" method="post" enctype="multipart/form-data">

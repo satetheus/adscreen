@@ -1,5 +1,6 @@
 <?php
 
+
 function imageCheck($target_file, $file_name, $submit) {
     // starting code from https://www.w3schools.com/php/php_file_upload.asp
     // Check if image file is a actual image or fake image
@@ -49,5 +50,23 @@ function uploadImage($directory, $input_id, $submit_id) {
         }
     }
 }
+
+
+function set_image_vars() {
+    if(isset($_GET['size']) && isset($_GET['index'])) {
+        $dir = '../displaySite/img/'.$_GET['size'].'_ad/';
+        $image = importImages($dir)[$_GET['index']];
+        $name = str_replace($dir, "", $image);
+    }
+
+    else {
+        // Redirect if parameters are not set
+        header("location: view.php");
+        exit;
+    }
+
+    return array($dir, $image, $name);
+}
+
 
 ?>

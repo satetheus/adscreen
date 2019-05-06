@@ -1,5 +1,5 @@
 <?php
-include "checks.php";
+include "funcs.php";
 
 
 echo '<!DOCTYPE html>

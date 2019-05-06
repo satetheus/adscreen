@@ -31,7 +31,13 @@ if(isset($_POST['editSubmit'])) {
         echo "Sorry, file already exists.";
     }
     else {
-        echo 'Success!';
+        rename($image, $dir.$_POST['fileName']);
+        if (file_exists($dir.$_POST['fileName'])) {
+            echo 'Success, file renamed to '.$_POST['fileName'];
+        }
+        else {
+            echo 'Upload Failed';
+        }
     }
 }
 

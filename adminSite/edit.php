@@ -7,13 +7,8 @@ echo '<!DOCTYPE html>
 
 
 if(isset($_GET['size'])) {
-    if($_GET['size'] == 'large') {
-        $images = importImages('../displaySite/img/large_ad/');
-    }
-
-    else if($_GET['size'] == 'small') {
-        $images = importImages('../displaySite/img/small_ad/');
-    }
+    $dir = '../displaySite/img/'.$_GET['size'].'_ad/';
+    $images = importImages($dir);
 }
 
 echo '<form action="" method="post" enctype="multipart/form-data">

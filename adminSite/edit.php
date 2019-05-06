@@ -1,23 +1,13 @@
 <?php
 include "../displaySite/import.php";
+include "funcs.php";
 
 
 echo '<!DOCTYPE html>
 <html>
 <body>';
 
-
-if(isset($_GET['size'])) {
-    $dir = '../displaySite/img/'.$_GET['size'].'_ad/';
-    $image = importImages($dir)[$_GET['index']];
-    $name = str_replace($dir, "", $image);
-}
-
-else {
-    // Redirect if parameters are not set
-    header("location: view.php");
-    exit;
-}
+list($dir, $image, $name) = set_image_vars();
 
 echo '<form action="" method="post" enctype="multipart/form-data">
 Rename Image
@@ -41,7 +31,7 @@ if(isset($_POST['editSubmit'])) {
     }
 }
 
-echo '<span><p>Delete</p></span>';
+echo '<a href="delete.php?size='.$_GET['size'].'&index='.$_GET['index'].'"><span><p>Delete</p></span></a>';
 
 echo "<img src='".$image."'/>";
 

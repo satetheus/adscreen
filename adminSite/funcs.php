@@ -26,7 +26,7 @@ function imageCheck($target_file, $file_name, $submit) {
     // Allow certain file formats
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     if(!in_array($imageFileType, array("jpg", "png","jpeg", "gif"))) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "Sorry, only JPG, JPEG, PNG, & GIF files are allowed.";
         return False;
     }
 

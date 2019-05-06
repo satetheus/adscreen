@@ -41,7 +41,7 @@ if(isset($_POST['editSubmit'])) {
     }
 }
 
-echo '<span><p>Delete</p></span>';
+echo '<a href="delete.php?size='.$_GET['size'].'&index='.$_GET['index'].'"><span><p>Delete</p></span></a>';
 
 echo "<img src='".$image."'/>";
 

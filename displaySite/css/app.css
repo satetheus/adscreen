@@ -7,25 +7,24 @@ body {
 }
 
 .large_ads {
-  height: 98vh;
-  width: 64vw;
+  height: 100vh;
+  width: 65vw;
   float: left
 }
 
 .subad_1 {
-  height: 49vh;
+  height: 50vh;
   width: 33vw;
   float: right;
 }
 
 .subad_2 {
-  height: 49vh;
+  height: 50vh;
   width: 33vw;
   float: right;
 }
 
 .image {
-  border-radius: 3px;
   height: 100%;
   width: 100%;
 }

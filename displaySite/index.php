@@ -15,17 +15,11 @@ echo "
     <link rel='stylesheet' href='css/app.css'>
   </head>
   <body>
-    <div class='large_ads'>
-      <img class='image' id='big_picture' src='{$big_images[0]}'>
-    </div>
+      <img class='large_image' id='big_picture' src='{$big_images[0]}'>
 
-    <div class='subad_1'>
-      <img class='image' id='small_top_ad' src='{$small_images[0]}'>
-    </div>
+      <img class='small_image' id='small_top_ad' src='{$small_images[0]}'>
 
-    <div class='subad_2'>
-      <img class='image' id='small_bottom_ad' src='{$small_images[0]}'>
-    </div>
+      <img class='small_image' id='small_bottom_ad' src='{$small_images[0]}'>
 
     <script src='js/app.js'></script>
   </body>

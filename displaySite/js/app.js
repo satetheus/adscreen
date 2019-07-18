@@ -1,6 +1,6 @@
 inc1 = 0;
-inc2 = 0;
-inc3 = 3;
+inc2 = 1;
+inc3 = 0;
 switcher = 0;
 
 function changeImage(ad_id, list_id, increment) {

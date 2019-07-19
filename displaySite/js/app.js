@@ -1,6 +1,8 @@
 inc1 = 0;
 inc2 = 1;
 inc3 = 0;
+largeRotTime = 3000;
+smallRotTime = 2000;
 
 function changeImage(ad_id, list_id, increment) {
     var img = document.getElementById(ad_id);
@@ -8,7 +10,6 @@ function changeImage(ad_id, list_id, increment) {
     if(increment >= list_id.length){increment = 0;}
     fadeImg(img, 100, false);
 }
-
 
 function fadeImg(el, val, fade){
     if(fade === true){val--;}
@@ -23,7 +24,7 @@ setInterval(function() {
     inc1++;
     if(inc1>=big_images.length){inc1=0;}
     changeImage("big_picture", big_images, inc1);
-}, 3000);
+}, largeRotTime);
 
 setInterval(function() {
     inc2++;
@@ -32,4 +33,4 @@ setInterval(function() {
     if(inc3>=small_images.length){inc3=0;}
     changeImage("small_top_ad", small_images, inc2);
     changeImage("small_bottom_ad", small_images, inc3);
-}, 2000);
+}, smallRotTime);

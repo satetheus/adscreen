@@ -39,9 +39,21 @@ echo '
 
     <label for="adrot-single">Single ad rotation</label>
         <input type="number" name="adrot-single" min="1000" max="3600000">
-        
+
   <input type="submit" value="Set rotation" name="rotSet">
 </form>';
+
+$rotSettings = array('largeRot' => "", 
+                     'smallRot' => "",
+                     'singleRot' => "");
+
+if(isset($_POST["rotSet"])) {
+    $rotSettings = array('largeRot' => $_POST["adrot-large"], 
+                         'smallRot' => $_POST["adrot-small"],
+                         'singleRot' => $_POST["adrot-single"]);
+}
+
+echo $rotSettings['largeRot'], $rotSettings['smallRot'], $rotSettings['singleRot'];
 
 echo '
 <form action="" method="post">

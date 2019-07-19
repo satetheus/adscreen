@@ -3,6 +3,7 @@ include "import.php";
 
 $big_images = importImages('img/large_ad/');
 $small_images = importImages('img/small_ad/');
+$single_images = importImages('img/single_ad/');
 $rotSettings = json_decode(file_get_contents("../settings.json"), true);
 
 echo "
@@ -27,6 +28,7 @@ echo "
 <script type="text/javascript">
 var big_images = <?=json_encode($big_images) ?>;
 var small_images = <?=json_encode($small_images) ?>;
+var single_images = <?=json_encode($single_images) ?>;
 var rotSettings = <?=json_encode($rotSettings) ?>;
 </script>
 <script src='js/app.js'></script>

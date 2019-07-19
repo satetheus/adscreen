@@ -3,10 +3,20 @@
 }
 
 body {
-  background-color: black;
   margin: 0;
 }
 
+html {
+  background-image: url(../img/image1.jpg); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
 
 .small_image {
   display: block;

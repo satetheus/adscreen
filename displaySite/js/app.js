@@ -29,14 +29,11 @@ setInterval(function() {
   }
   else if (switcher == 1) {
     inc2++;
-    if(inc2>=small_images.length){inc2=0;}
-    changeImage("small_top_ad", small_images, inc2);
-    switcher++;
-  }
-  else if (switcher >= 2){
     inc3++;
+    if(inc2>=small_images.length){inc2=0;}
     if(inc3>=small_images.length){inc3=0;}
+    changeImage("small_top_ad", small_images, inc2);
     changeImage("small_bottom_ad", small_images, inc3);
-    switcher = 0;
+    switcher--;
   }
 }, 1000);

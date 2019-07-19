@@ -53,7 +53,7 @@ if(isset($_POST["rotSet"])) {
                          'singleRot' => $_POST["adrot-single"]);
 }
 
-echo json_encode($rotSettings);
+file_put_contents('../settings.json', json_encode($rotSettings));
 
 echo '
 <form action="" method="post">

@@ -29,6 +29,26 @@ if(isset($_POST["submitSmall"])) {
     uploadImage($small_dir, 'smallImage', 'submitSmall');
 }
 
+echo '
+<form action="" method="post">
+    <label for="adrot-large">Large ad rotation</label>
+        <input type="number" name="adrot-large" min="1000" max="3600000">
+
+    <label for="adrot-small">Small ad rotation</label>
+        <input type="number" name="adrot-small" min="1000" max="3600000">
+
+    <label for="adrot-single">Single ad rotation</label>
+        <input type="number" name="adrot-single" min="1000" max="3600000">
+        
+  <input type="submit" value="Set rotation" name="rotSet">
+</form>';
+
+echo '
+<form action="" method="post">
+  <input type="radio" name="multi"><label for="multi">Multi-ad</label>
+  <input type="radio" name="single"><labal for="single">Single ad</label>
+  <input type="submit" value="Set Mode" name="modeSet">
+</form>';
 
 echo '<form action="view.php" method="get" enctype="multipart/form-data">
   <input type="submit" value="View all images on display">

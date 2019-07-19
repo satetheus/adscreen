@@ -54,14 +54,19 @@ if(isset($_POST["rotSet"])) {
                          'singleRot' => $_POST["adrot-single"]);
 }
 
-file_put_contents('../settings.json', json_encode($rotSettings));
-
 echo '
 <form action="" method="post">
-  <input type="radio" name="multi"><label for="multi">Multi-ad</label>
-  <input type="radio" name="single"><labal for="single">Single ad</label>
+  <input type="radio" name="mode" value="multi" required>Multi-ad
+  <input type="radio" name="mode" value="single" required>Single ad
   <input type="submit" value="Set Mode" name="modeSet">
 </form>';
+
+if(isset($_POST['modeSet'])) {
+    $modeSettings = array('mode' => $_POST['mode']);
+    $rotSettings = array_replace($rotSettings, $modeSettings);
+}
+
+file_put_contents('../settings.json', json_encode($rotSettings));
 
 echo '<form action="view.php" method="get" enctype="multipart/form-data">
   <input type="submit" value="View all images on display">

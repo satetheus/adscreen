@@ -29,6 +29,8 @@ if(isset($_POST["submitSmall"])) {
     uploadImage($small_dir, 'smallImage', 'submitSmall');
 }
 
+$rotSettings = json_decode(file_get_contents("../settings.json"), true);
+
 echo '
 <form action="" method="post">
     <label for="adrot-large">Large ad rotation</label>
@@ -42,10 +44,6 @@ echo '
 
   <input type="submit" value="Set rotation" name="rotSet">
 </form>';
-
-$rotSettings = array('largeRot' => "", 
-                     'smallRot' => "",
-                     'singleRot' => "");
 
 if(isset($_POST["rotSet"])) {
     $rotSettings = array('largeRot' => $_POST["adrot-large"], 

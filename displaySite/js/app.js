@@ -21,19 +21,16 @@ function fadeImg(el, val, fade){
 }
 
 setInterval(function() {
-  if (switcher == 0) {
     inc1++;
     if(inc1>=big_images.length){inc1=0;}
     changeImage("big_picture", big_images, inc1);
-    switcher++;
-  }
-  else if (switcher == 1) {
+}, 3000);
+
+setInterval(function() {
     inc2++;
     inc3++;
     if(inc2>=small_images.length){inc2=0;}
     if(inc3>=small_images.length){inc3=0;}
     changeImage("small_top_ad", small_images, inc2);
     changeImage("small_bottom_ad", small_images, inc3);
-    switcher--;
-  }
-}, 1000);
+}, 2000);

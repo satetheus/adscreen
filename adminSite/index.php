@@ -61,16 +61,25 @@ echo "
 </form>";
 
 if(isset($_POST["rotSet"])) {
-    $rotSettings = array('largeRot' => $_POST["adrot-large"]*1000, 
+    $newRotSettings = array('largeRot' => $_POST["adrot-large"]*1000, 
                          'smallRot' => $_POST["adrot-small"]*1000,
                          'singleRot' => $_POST["adrot-single"]*1000);
+    $rotSettings = array_replace($rotSettings, $newRotSettings);
 }
 
 echo '
 <form action="" method="post">
-  <input type="radio" name="mode" value="multi" required>Multi-ad
-  <input type="radio" name="mode" value="single" required>Single ad
-  <input type="submit" value="Set Mode" name="modeSet">
+  <input type="radio" name="mode" value="multi"';
+
+if($rotSettings['mode']=="multi") {echo ' checked="checked" ';}
+
+echo 'required>Multi-ad
+<input type="radio" name="mode" value="single"';
+
+if($rotSettings['mode']=='single') {echo ' checked="checked" ';}
+
+echo 'required>Single ad
+<input type="submit" value="Set Mode" name="modeSet">
 </form>';
 
 if(isset($_POST['modeSet'])) {

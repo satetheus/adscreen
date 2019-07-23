@@ -13,6 +13,7 @@ echo "
   <meta charset='utf-8'>
   <title>Ad Test</title>
   <meta name='viewport' content='width=device-width', initial-scale='1'>
+  <meta http-equiv='refresh' content=\"3600 URL='{$_SERVER['PHP_SELF']}'\">
   <meta name='description' content=''>
   <link rel='stylesheet' href='css/app.css'>
 </head>
@@ -24,6 +25,7 @@ echo "
 </html>
 ";
 ?>
+
 
 <script type="text/javascript">
 var big_images = <?=json_encode($big_images) ?>;

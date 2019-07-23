@@ -42,28 +42,28 @@ if(isset($_POST["submitSingle"])) {
 }
 
 $rotSettings = json_decode(file_get_contents("../settings.json"), true);
-$rotLarge = $rotSettings['largeRot'];
-$rotSmall = $rotSettings['smallRot'];
-$rotSingle = $rotSettings['singleRot'];
+$rotLarge = $rotSettings['largeRot']/1000;
+$rotSmall = $rotSettings['smallRot']/1000;
+$rotSingle = $rotSettings['singleRot']/1000;
 
 echo "
 <form action='' method='post'>
     <label for='adrot-large'>Large ad rotation</label>
-        <input type='number' name='adrot-large' min='1000' max='3600000' value='{$rotLarge}' required>
+        <input type='number' name='adrot-large' min='1' max='3600' value='{$rotLarge}' required>
 
     <label for='adrot-small'>Small ad rotation</label>
-        <input type='number' name='adrot-small' min='1000' max='3600000' value='{$rotSmall}' required>
+        <input type='number' name='adrot-small' min='1' max='3600' value='{$rotSmall}' required>
 
     <label for='adrot-single'>Single ad rotation</label>
-        <input type='number' name='adrot-single' min='1000' max='3600000' value='{$rotSingle}' required>
+        <input type='number' name='adrot-single' min='1' max='3600' value='{$rotSingle}' required>
 
   <input type='submit' value='Set rotation' name='rotSet'>
 </form>";
 
 if(isset($_POST["rotSet"])) {
-    $rotSettings = array('largeRot' => $_POST["adrot-large"], 
-                         'smallRot' => $_POST["adrot-small"],
-                         'singleRot' => $_POST["adrot-single"]);
+    $rotSettings = array('largeRot' => $_POST["adrot-large"]*1000, 
+                         'smallRot' => $_POST["adrot-small"]*1000,
+                         'singleRot' => $_POST["adrot-single"]*1000);
 }
 
 echo '

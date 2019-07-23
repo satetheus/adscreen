@@ -8,7 +8,7 @@ $rotSettings = json_decode(file_get_contents("../settings.json"), true);
 
 echo "
 <!doctype html>
-<html>
+<html style='background-image: url({$single_images[0]})'>
 <head>
   <meta charset='utf-8'>
   <title>Ad Test</title>

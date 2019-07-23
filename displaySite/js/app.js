@@ -19,6 +19,7 @@ function fadeImg(el, val, fade){
 }
 
 if(rotSettings['mode']=='multi') {
+    document.documentElement.style.backgroundImage = "none";
     document.getElementById('big_picture').style.visibility = "visible";
     document.getElementById('small_top_ad').style.visibility = "visible";
     document.getElementById('small_bottom_ad').style.visibility = "visible";

@@ -29,6 +29,18 @@ if(isset($_POST["submitSmall"])) {
     uploadImage($small_dir, 'smallImage', 'submitSmall');
 }
 
+echo '
+<form action="" method="post" enctype="multipart/form-data">
+    Select image to upload as Single Ad:
+    <input type="file" name="singleImage" id="singleImage">
+    <input type="submit" value="Upload Image" name="submitSingle">
+</form>';
+
+if(isset($_POST["submitSingle"])) {
+    $single_dir = "../displaySite/img/single_ad/";
+    uploadImage($single_dir, 'singleImage', 'submitSingle');
+}
+
 $rotSettings = json_decode(file_get_contents("../settings.json"), true);
 $rotLarge = $rotSettings['largeRot'];
 $rotSmall = $rotSettings['smallRot'];

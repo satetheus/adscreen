@@ -4,11 +4,11 @@ include "funcs.php";
 session_start();
 
 if(!isset($_SESSION['auth'])) {
-    header("Location: /adscreen/admin/pass");
+    header("Location: /admin/pass");
 }
 
 elseif($_SESSION['auth'] != true) {
-    header("Location: /adscreen/admin/pass");
+    header("Location: /admin/pass");
 }
 
 echo '<!DOCTYPE html>

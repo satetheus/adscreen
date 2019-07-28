@@ -21,7 +21,7 @@
 
             $_SESSION['auth'] = true;
 
-            header("Location: /adscreen/admin/index");
+            header("Location: /admin/index");
         }else{
             echo "athentification failed";
         }

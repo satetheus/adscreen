@@ -1,6 +1,15 @@
 <?php
 include "funcs.php";
 
+session_start();
+
+if(!isset($_SESSION['auth'])) {
+    header("Location: /adscreen/admin/pass");
+}
+
+elseif($_SESSION['auth'] != true) {
+    header("Location: /adscreen/admin/pass");
+}
 
 echo '<!DOCTYPE html>
 <html>

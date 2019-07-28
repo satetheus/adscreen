@@ -9,6 +9,13 @@ echo '<!DOCTYPE html>
 <html>
 <body>';
 
+echo '
+<br>
+<p>Return to Admin Page</p>
+<form action="index.php" method="get" enctype="multipart/form-data">
+  <input type="submit" value="back to admin page">
+</form>';
+
 echo '<h1>Large Ads</h1>';
 
 foreach($big_images as $file) {

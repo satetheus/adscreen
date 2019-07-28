@@ -19,7 +19,7 @@ if(isset($_POST['deleteImage'])) {
     unlink($image) || die('Couldn\'t delete image.');
     if(!file_exists($image)) {
         echo $name.' deleted.';
-        header("Location: /adscreen/adminSite/view");
+        header("Location: /adscreen/admin/view");
     }
 }
 

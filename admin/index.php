@@ -98,6 +98,13 @@ echo '
 </form>';
 
 echo '
+<br>
+<h2>View Display Website</h2>
+<form action="../displaySite/index.php" method="get" enctype="multipart/form-data">
+  <input type="submit" value="View Website">
+</form>';
+
+echo '
 </body>
 </html>';
 

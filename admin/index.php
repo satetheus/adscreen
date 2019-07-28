@@ -5,9 +5,9 @@ include "funcs.php";
 echo '<!DOCTYPE html>
 <html>
 <body>
-
+<h2>Upload Images</h2>
 <form action="" method="post" enctype="multipart/form-data">
-    Select image to upload as Large Ad:
+    <strong>Large Ad Upload:<strong>
     <input type="file" name="bigImage" id="bigImage">
     <input type="submit" value="Upload Image" name="submitBig">
 </form>';
@@ -19,7 +19,7 @@ if(isset($_POST["submitBig"])) {
 
 echo '
 <form action="" method="post" enctype="multipart/form-data">
-    Select image to upload as Small Ad:
+    <strong>Small Ad Upload:<strong>
     <input type="file" name="smallImage" id="smallImage">
     <input type="submit" value="Upload Image" name="submitSmall">
 </form>';
@@ -31,7 +31,7 @@ if(isset($_POST["submitSmall"])) {
 
 echo '
 <form action="" method="post" enctype="multipart/form-data">
-    Select image to upload as Single Ad:
+    <strong>Single Ad Upload:<strong>
     <input type="file" name="singleImage" id="singleImage">
     <input type="submit" value="Upload Image" name="submitSingle">
 </form>';
@@ -46,17 +46,17 @@ $rotLarge = $rotSettings['largeRot']/1000;
 $rotSmall = $rotSettings['smallRot']/1000;
 $rotSingle = $rotSettings['singleRot']/1000;
 
-echo "
+echo "<br><br><h2>Set Rotation Times</h2><h4>(numbers are in seconds)</h4>
 <form action='' method='post'>
-    <label for='adrot-large'>Large ad rotation</label>
+    <label for='adrot-large'>Large ad rotation:</label>
         <input type='number' name='adrot-large' min='1' max='3600' value='{$rotLarge}' required>
-
-    <label for='adrot-small'>Small ad rotation</label>
+    <br>
+    <label for='adrot-small'>Small ad rotation:</label>
         <input type='number' name='adrot-small' min='1' max='3600' value='{$rotSmall}' required>
-
-    <label for='adrot-single'>Single ad rotation</label>
+    <br>
+    <label for='adrot-single'>Single ad rotation:</label>
         <input type='number' name='adrot-single' min='1' max='3600' value='{$rotSingle}' required>
-
+    <br>
   <input type='submit' value='Set rotation' name='rotSet'>
 </form>";
 
@@ -68,6 +68,7 @@ if(isset($_POST["rotSet"])) {
 }
 
 echo '
+<br><h2>Set ad viewing mode</h2>
 <form action="" method="post">
   <input type="radio" name="mode" value="multi"';
 
@@ -89,8 +90,11 @@ if(isset($_POST['modeSet'])) {
 
 file_put_contents('../settings.json', json_encode($rotSettings));
 
-echo '<form action="view.php" method="get" enctype="multipart/form-data">
-  <input type="submit" value="View all images on display">
+echo '
+<br>
+<h2>View Images on Display</h2>
+<form action="view.php" method="get" enctype="multipart/form-data">
+  <input type="submit" value="View Images">
 </form>';
 
 echo '
